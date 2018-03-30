@@ -1,0 +1,6 @@
+load_questions:
+ path: load/questions
+ defaults:
+  _controller: \Drupal\load_questions\Controller\LoadQuestionsController::load
+ requirements:
+  _permission: 'access content'
