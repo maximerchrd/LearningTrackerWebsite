@@ -1,5 +1,5 @@
 load_questions:
- path: load/questions
+ path: 'load/questions/{questionid}/{questiontype}'
  defaults:
   _controller: \Drupal\load_questions\Controller\LoadQuestionsController::load
  requirements:
