@@ -1,0 +1,6 @@
+likebtn.admin:
+  title: 'LikeBtn configuration'
+  description: 'Configuration for LikeBtn module'
+  weight: 10
+  route_name: likebtn.admin
+  parent: system.admin_config_services

@@ -1,0 +1,25 @@
+likebtn-libraries:
+  version: "2.8"
+  js:
+    https://likebtn.com/en/js/donate_generator.js: { type: external, minified: false, attributes: { defer: true, async: true } }
+    https://w.likebtn.com/js/w/widget.js: { type: external, minified: false, async: true, attributes: { defer: true, async: true } }
+    assets/js/admin.js: { minified: false }
+    assets/js/select2/select2.js: { minified: false }
+  css:
+    theme:
+      assets/css/select2.css: { minified: false }
+  dependencies:
+    - core/jquery
+
+likebtn-reportslibraries:
+  version: "2.8"
+  js:
+    assets/js/reports.js: { minified: false }
+    assets/js/highstock/highstock.js: { minified: false }
+    assets/js/highstock/exporting.js: { minified: false }
+    assets/js/highstock/no-data-to-display.js: { minified: false }
+  css:
+    theme:
+      assets/css/admin.css: { minified: false }
+  dependencies:
+    - core/jquery

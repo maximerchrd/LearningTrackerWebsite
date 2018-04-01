@@ -1,0 +1,43 @@
+.likebtn-graph {
+    background-color: white;
+    width: 80%;
+}
+.reports-graph-d,
+.reports-graph-m {
+    min-height: 300px;
+    background: url(../img/ajax_loader_big.gif) 50% 50% no-repeat;
+}
+.reports-error {
+    display: none;
+}
+.reports-vals {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+.report-val {
+    white-space: nowrap;
+    margin: 15px 15px 15px 0;
+    display: inline-block;
+}
+.reports-label {
+    border-radius: 0.25em;
+    color: #fff;
+    display: inline;
+    font-size: 110%;
+    font-weight: bold;
+    line-height: 1;
+    margin-left: 2px;
+    padding: 0.2em 0.6em 0.3em;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+.reports-total {
+    background-color: #337ab7;
+}
+.reports-like {
+    background-color: #5cb85c;
+}
+.reports-dislike {
+    background-color: #f0ad4e;
+}

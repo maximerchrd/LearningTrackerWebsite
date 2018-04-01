@@ -1,0 +1,14 @@
+{
+  "name": "drupal/likebtn",
+  "type": "drupal-module",
+  "description": "Like Button",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "http://drupal.org/project/likebtn",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/likebtn",
+    "source": "http://cgit.drupalcode.org/likebtn"
+  },
+  "require": { }
+}

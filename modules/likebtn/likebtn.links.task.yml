@@ -1,0 +1,26 @@
+likebtn.admin_config_tab:
+  route_name: likebtn.admin
+  title: 'General Setting'
+  base_route: likebtn.admin_config_tab
+
+likebtn.likebtn_settings_config_tab:
+  route_name: likebtn.likebtn_settings
+  title: 'LikeBtn Setting'
+  base_route: likebtn.admin_config_tab
+
+likebtn.reports_config_tab:
+  route_name: likebtn.reports
+  title: 'Reports'
+  base_route: likebtn.admin_config_tab
+
+likebtn.node_likes:
+  route_name : likebtn.node
+  title: 'Likes'
+  base_route: entity.node.canonical
+  weight: 10
+
+likebtn.comment_likes:
+  route_name : likebtn.comment
+  title: 'Likes'
+  base_route: entity.comment.canonical
+  weight: 10

@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  if (typeof(LikeBtn) != "undefined") {
+    LikeBtn.init();
+  }
+</script>
+
+{% if html_before %}
+  {{ html_before }}
+{% endif %}
+
+{% if aligment %}
+  <div style="text-align:{{ aligment }}" class="likebtn_container">
+    <span class="likebtn-wrapper" {{ data|raw }}></span>
+  </div>
+{% else %}
+  <div class="likebtn_container">
+    <span class="likebtn-wrapper" {{ data|raw }}></span>
+  </div>
+{% endif %}
+
+{% if html_after %}
+  {{ html_after }}
+{% endif %}
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>

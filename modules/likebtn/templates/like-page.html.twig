@@ -1,0 +1,38 @@
+<table>
+  {% if header %}
+    <thead>
+      <tr>
+        {% for cell in header %}
+          <td> {{- cell -}} </td>
+        {% endfor %}
+      </tr>
+    </thead>
+  {% endif %}
+
+  {% if rows %}
+    <tbody>
+    {% for row in rows %}
+      <tr>
+        <td>{{ row.button }}</td>
+        <td>{{ row.likes }}</td>
+        <td>{{ row.dislikes }}</td>
+        <td>{{ row.likes_minus_dislikes }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  {% endif %}
+</table>
+<p>
+  {{ 'Total likes minus dislikes (vote results):'|t }} <strong> {{ total_likes_minus_dislikes }} </strong>
+</p>
+<p> {{ "If you don't see information on likes:"|t }} </p>
+<ul>
+  <li> {{ 'Make sure you have entered information correctly in'|t }}
+    <a href="{{ path('likebtn.admin') }}"> {{ 'Auto-synching likes into local database'|t }} (PRO, VIP, ULTRA) </a>
+  </li>
+  <li> {{ 'Make sure that PHP curl extension is enabled.'|t }} </li>
+  <li> {{ 'Maybe nobody voted for this content type yet.'|t }} </li>
+  <li> {{ 'Perhaps synchronization has not been launched yet.'|t }} </li>
+</ul>
+
+

@@ -1,0 +1,44 @@
+likebtn.admin:
+  path: '/admin/config/services/likebtn'
+  defaults:
+    _title: 'General Settings'
+    _form: '\Drupal\likebtn\Form\GeneralSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+likebtn.likebtn_settings:
+  path: '/admin/config/services/likebtn/likebtn-settings'
+  defaults:
+    _title: 'Likebtn Settings'
+    _form: '\Drupal\likebtn\Form\LikebtnSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+likebtn.reports:
+  path: '/admin/config/services/likebtn/reports'
+  defaults:
+    _title: 'Reports'
+    _form: '\Drupal\likebtn\Form\LikebtnReportsForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+likebtn.testsync:
+  path: '/admin/config/services/likebtn/testsync'
+  defaults:
+    _controller: '\Drupal\likebtn\Controller\LikeBtnController::likebtnTestSync'
+  requirements:
+    _permission: 'administer site configuration'
+
+likebtn.node:
+  path: '/node/{node}/likes'
+  defaults:
+    _controller: 'Drupal\likebtn\Controller\LikeBtnController::nodeLikes'
+  requirements:
+    _permission: 'administer site configuration'
+
+likebtn.comment:
+  path: '/comment/{comment}/likes'
+  defaults:
+    _controller: 'Drupal\likebtn\Controller\LikeBtnController::commentLikes'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,66 @@
+general:
+  likebtn_plan: 9
+  likebtn_user_logged_in: logged_in
+  likebtn_sync_inerval: 60
+  likebtn_weight: 10
+settings:
+  likebtn_alignment: left
+  likebtn_settings:
+    theme: white
+    lang: en
+    show_like_label: TRUE
+    show_dislike_label: FALSE
+    popup_dislike: FALSE
+    like_enabled: TRUE
+    icon_like_show: TRUE
+    icon_dislike_show: TRUE
+    lazy_load: FALSE
+    dislike_enabled: TRUE
+    voting_enabled: TRUE
+    unlike_allowed: TRUE
+    voting_both: FALSE
+    white_label: FALSE
+    rich_snippet: FALSE
+    popup_content_order: popup_share,popup_donate,popup_html
+    popup_disabled: FALSE
+    popup_position: TRUE
+    popup_style: TRUE
+    popup_hide_on_outside_click: TRUE
+    event_handler: NULL
+    info_message: TRUE
+    counter_type: number
+    counter_clickable: FALSE
+    counter_show: TRUE
+    counter_padding: NULL
+    counter_zero_show: FALSE
+    share_enabled: TRUE
+    addthis_pubid: NULL
+    addthis_service_codes: NULL
+    loader_show: FALSE
+    loader_image: NULL
+    tooltip_enabled: TRUE
+    vert: FALSE
+    counter_count: FALSE
+    rtl: FALSE
+    share_size: medium
+    popup_width: 176
+    tooltip_like_show_always: FALSE
+    tooltip_dislike_show_always: FALSE
+    popup_on_load: FALSE
+    i18n_like: NULL
+    i18n_dislike: NULL
+    i18n_after_like: NULL
+    i18n_after_dislike: NULL
+    i18n_like_tooltip: NULL
+    i18n_dislike_tooltip: NULL
+    i18n_unlike_tooltip: NULL
+    i18n_undislike_tooltip: NULL
+    i18n_share_text: NULL
+    i18n_popup_close: NULL
+    i18n_popup_text: NULL
+  sync:
+    likebtn_last_sync_time: 0
+    likebtn_last_sync_time: 0
+    likebtn_last_successfull_sync_time: 0
+    likebtn_sync_inerval: 60
+

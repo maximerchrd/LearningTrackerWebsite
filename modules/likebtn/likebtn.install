@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the LikeBtn module.
+ */
+
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\likebtn\LikebtnInterface;
+
+/**
+ * Implements hook_install().
+ */
+function likebtn_install() {
+  $link = array('@link' => \Drupal::l(t('Administration > Web services > LikeBtn configuration'), Url::fromRoute('likebtn.admin')));
+
+  drupal_set_message(t('LikeBtn settings are available under @link', $link));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function likebtn_uninstall() {
+  Drupal::configFactory()->getEditable('likebtn.settings')->delete();
+}
+
+/**
+ * New options
+ */
+function likebtn_update_8203() {
+  $config = \Drupal::configFactory()->getEditable('likebtn.settings');
+  $config->set('settings.likebtn_settings.voting_enabled', TRUE);
+  $config->set('settings.likebtn_settings.theme', $config->get('settings.likebtn_settings.style'));
+  $config->set('settings.likebtn_settings.voting_both', $config->get('settings.likebtn_settings.like_dislike_at_the_same_time'));
+  $config->save();
+}

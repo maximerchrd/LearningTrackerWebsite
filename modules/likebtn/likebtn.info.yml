@@ -1,0 +1,17 @@
+name: 'LikeBtn'
+description: 'Provides a fully customizable like button widget.'
+type: module
+# core: 8.x
+# version: '8.x-2.x-dev'
+package: 'Voting'
+configure: likebtn.admin
+
+dependencies:
+  - field
+  - votingapi
+
+# Information added by Drupal.org packaging script on 2017-11-26
+version: '8.x-2.13'
+core: '8.x'
+project: 'likebtn'
+datestamp: 1511675890

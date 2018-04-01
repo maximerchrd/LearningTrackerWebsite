@@ -1,0 +1,456 @@
+<?php
+
+define('LIKEBTN_SETTINGS', serialize(array(
+  "identifier"             => array("default" => ''),
+  "local_domain"           => array("default" => ''),
+  "domain_from_parent"     => array("default" => FALSE),
+  "subdirectory"           => array("default" => ''),
+  "lang"                   => array("default" => "en"),
+  "show_like_label"        => array("default" => TRUE),
+  "show_dislike_label"     => array("default" => FALSE),
+  "popup_dislike"          => array("default" => FALSE),
+  "like_enabled"           => array("default" => TRUE),
+  "dislike_enabled"        => array("default" => TRUE),
+  "icon_like_show"         => array("default" => TRUE),
+  "icon_dislike_show"      => array("default" => TRUE),
+  "lazy_load"              => array("default" => FALSE),
+  "counter_type"           => array("default" => "number"),
+  "counter_clickable"      => array("default" => FALSE),
+  "counter_show"           => array("default" => TRUE),
+  "counter_padding"        => array("default" => ''),
+  "counter_zero_show"      => array("default" => FALSE),
+  "voting_enabled"         => array("default" => TRUE),
+  "unlike_allowed"         => array("default" => TRUE),
+  "voting_both"            => array("default" => FALSE),
+  "voting_frequency"       => array("default" => ''),
+  "theme"                  => array("default" => 'white'),
+  "share_enabled"          => array("default" => TRUE),
+  "item_url"               => array("default" => ''),
+  "item_title"             => array("default" => ''),
+  "item_description"       => array("default" => ''),
+  "item_image"             => array("default" => ''),
+  "item_date"              => array("default" => ''),
+  "addthis_pubid"          => array("default" => ''),
+  "addthis_service_codes"  => array("default" => ''),
+  "loader_show"            => array("default" => FALSE),
+  "loader_image"           => array("default" => ''),
+  "tooltip_enabled"        => array("default" => TRUE),
+  "white_label"            => array("default" => FALSE),
+  "rich_snippet"           => array("default" => FALSE),
+  "popup_html"             => array("default" => ''),
+  "popup_donate"           => array("default" => ''),
+  "popup_content_order"    => array("default" => 'popup_share,popup_donate,popup_html'),
+  "popup_disabled"         => array("default" => FALSE),
+  "popup_position"         => array("default" => 'top'),
+  "popup_style"            => array("default" => 'light'),
+  "popup_hide_on_outside_click"  => array("default" => TRUE),
+  "event_handler"          => array("default" => ''),
+  "info_message"           => array("default" => ''),
+  "vert"                   => array("default" => FALSE),
+  "ef_voting"              => array("default" => ''),
+  "counter_count"          => array("default" => FALSE),
+  "rtl"                    => array("default" => FALSE),
+  "counter_frmt"           => array("default" => ''),
+  "share_size"             => array("default" => 'medium'),
+  "popup_width"            => array("default" => '176'),
+  "tooltip_like_show_always"    => array("default" => FALSE),
+  "tooltip_dislike_show_always" => array("default" => FALSE),
+  "popup_on_load"          => array("default" => FALSE),
+  "i18n_like"              => array("default" => ''),
+  "i18n_dislike"           => array("default" => ''),
+  "i18n_after_like"        => array("default" => ''),
+  "i18n_after_dislike"     => array("default" => ''),
+  "i18n_like_tooltip"      => array("default" => ''),
+  "i18n_dislike_tooltip"   => array("default" => ''),
+  "i18n_unlike_tooltip"    => array("default" => ''),
+  "i18n_undislike_tooltip" => array("default" => ''),
+  "i18n_share_text"        => array("default" => ''),
+  "i18n_popup_close"       => array("default" => ''),
+  "i18n_popup_text"        => array("default" => ''),
+  "i18n_popup_donate"      => array("default" => ''))));
+
+define('LIKEBTN_LANGS', serialize(array(
+  'en' => '[en] - English',
+  'ru' => '[ru] - Русский',
+  'af' => '[af] - Afrikaans',
+  'ar' => '[ar] - العربية',
+  'hy' => '[hy] - Հայերեն',
+  'be' => '[be] - Беларуская',
+  'bn' => '[bn] - বাংলা',
+  'bg' => '[bg] - Български език',
+  'bs' => '[bs] - bosanski jezik',
+  'ca' => '[ca] - Català',
+  'zh_CN' => '[zh_CN] - 简体中文',
+  'cs' => '[cs] - Čeština',
+  'fa' => '[fa] - فارسی',
+  'fi' => '[fi] - Suomi',
+  'fr' => '[fr] - Français',
+  'da' => '[da] - Dansk',
+  'nl' => '[nl] - Nederlands',
+  'de' => '[de] - Deutsch',
+  'el' => '[el] - Ελληνικά',
+  'he' => '[he] - עברית',
+  'hu' => '[hu] - Magyar',
+  'id' => '[id] - Bahasa Indonesia',
+  'it' => '[it] - Italiano',
+  'ja' => '[ja] - 日本語',
+  'kk' => '[kk] - Қазақ тілі',
+  'ko' => '[ko] - 한국어',
+  'lt' => '[lt] - Lietuvių kalba',
+  'ne' => '[ne] - नेपाली',
+  'no' => '[no] - Norsk bokmål',
+  'pl' => '[pl] - Polski',
+  'pt' => '[pt] - Português',
+  'pt_BR' => '[pt_BR] - Português do Brasil',
+  'ro' => '[ro] - Română',
+  'sr' => '[sr] - Српски језик',
+  'sk' => '[sk] - Slovenčina',
+  'sl' => '[sl] - Slovenščina',
+  'es' => '[es] - Español',
+  'sv' => '[sv] - Svenska',
+  'th' => '[th] - ไทย',
+  'tr' => '[tr] - Türkçe',
+  'uk' => '[uk] - Українська мова',
+  'vi' => '[vi] - Tiếng Việt')));
+
+define('LIKEBTN_STYLES', serialize(array(
+  'white',
+  'lightgray',
+  'gray',
+  'black',
+  'padded',
+  'drop',
+  'line',
+  'github',
+  'transparent',
+  'youtube',
+  'habr',
+  'heartcross',
+  'plusminus',
+  'google',
+  'greenred',
+  'large',
+  'elegant',
+  'disk',
+  'squarespace',
+  'slideshare',
+  'baidu',
+  'uwhite',
+  'ublack',
+  'uorange',
+  'ublue',
+  'ugreen',
+  'direct',
+  'homeshop',
+  'nero',
+  'sku',
+  'review',
+  'likebtn',
+  'roundthumb',
+  'ok',
+  'mid',
+  'mini',
+  'bootstrap',
+  'angular',
+  'tick',
+  'stack',
+  'vertplus',)));
+
+// LikeBtn website locales available.
+define('LIKEBTN_WEBSITE_LOCALES', serialize(array(
+  "en",
+  "ru")));
+
+/**
+ * @file
+ * Implements the LikeBtn module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\node\Entity\Node;
+use Drupal\likebtn\LikebtnInterface;
+use Drupal\likebtn\LikeBtnMarkup;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function likebtn_theme($existing, $type, $theme, $path) {
+  return array(
+    'likebtn_likes_page' => array(
+      'template' => 'like-page',
+      'variables' => array(
+        'total_likes_minus_dislikes' => NULL,
+        'header' => array(),
+        'rows' => array()
+      )
+    ),
+    'likebtn_markup' => array(
+      'template' => 'likebtn-markup',
+      'variables' => array(
+        'data' => array(),
+        'aligment' => NULL,
+        'html_before' => NULL,
+        'html_after' => NULL,
+        'subdirectory' => NULL
+      )
+    ),
+    'likebtn_test_sync' => array(
+      'template' => 'likebtn-test-sync',
+      'variables' => array(
+        'public_url' => NULL
+      )
+    ),
+    'likebtn_admin_reports' => array(
+      'template' => 'admin-reports',
+      'variables' => array(
+        'site_id' => NULL,
+        'loader_src' => NULL,
+        'settings_url' => NULL,
+      )
+    )
+  );
+}
+
+/**
+ * Implements hook_help().
+ */
+function likebtn_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.likebtn':
+      $output = file_get_contents(drupal_get_path('module', 'likebtn') . '/README.txt');
+      return '<pre>' . Html::escape($output) . '</pre>';
+  }
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function likebtn_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  $config = \Drupal::config('likebtn.settings');
+  $markup_render = new LikeBtnMarkup();
+  $type = $display->getTargetEntityTypeId();
+  $view_mode = $display->getOriginalMode();
+
+  if (!in_array($type, array('node', 'comment'))) {
+    return;
+  }
+
+  if (is_array($config->get('general.likebtn_view_modes')) && !in_array($view_mode, array_values($config->get('general.likebtn_view_modes')), true)) {
+    return;
+  }
+
+  $user_logged_in = $config->get('general.likebtn_user_logged_in') ?: 'all';
+
+  if ($user_logged_in != 'all') {
+    if ($user_logged_in == 'logged_in' && !\Drupal::currentUser()->isAuthenticated()) {
+      return;
+    }
+    if ($user_logged_in == 'not_logged_in' && \Drupal::currentUser()->isAuthenticated()) {
+      return;
+    }
+  }
+
+  if ($type == 'comment') {
+    $comment_node = Node::load($entity->id());
+    // Check if LikeBtn is enabled for comments to the current node type.
+
+    if (!in_array($comment_node->getType(), $config->get('general.likebtn_comments_nodetypes') ?: array(), TRUE)) {
+      return;
+    }
+    $entity_id = $entity->id();
+  }
+  else {
+    // Check if LikeBtn is enabled for the current node type.
+
+    if (!in_array($display->getTargetBundle(), $config->get('general.likebtn_nodetypes') ?: array(), TRUE)) {
+      return;
+    }
+    $entity_id = $entity->id();
+  }
+
+  $build['likebtn_display'] = $markup_render->likebtn_get_markup($type, $entity_id);
+
+  //$build['#attached']['library'][] = 'likebtn/likebtn-libraries';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Add comment configuration settings to the edit content type form.
+ */
+/*function likebtn_form_node_type_form_alter(&$form, $form_state) {
+  $config = \Drupal::config('likebtn.settings');
+
+  $node_type = $form['type']['#default_value'];
+
+  $form['comment']['likebtn_comments_sort_enabled'] = array(
+    '#title' => t('Sort comments by LikeBtn likes/dislikes'),
+    '#type' => 'checkbox',
+    '#default_value' => $config->get('likebtn_comments_sort_enabled_' . $node_type, FALSE),
+  );
+  // Sort by.
+  $form['comment']['likebtn_comments_sort_by'] = array(
+    '#title' => t('Sort by'),
+    '#type' => 'select',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="likebtn_comments_sort_enabled"]' => array('checked' => TRUE),
+      ),
+    ),
+    '#options' => array(
+      LikebtnInterface::LIKEBTN_COMMENTS_SORT_BY_LIKES => t('Likes'),
+      LikebtnInterface::LIKEBTN_COMMENTS_SORT_BY_DISLIKES => t('Dislikes'),
+      LikebtnInterface::LIKEBTN_COMMENTS_SORT_BY_LIKES_MINUS_DISLIKES => t('Likes minus dislikes')),
+    '#default_value' => $config->get('likebtn_comments_sort_by_' . $node_type, LikebtnInterface::LIKEBTN_COMMENTS_SORT_BY_LIKES),
+  );
+  // Sort order.
+  $form['comment']['likebtn_comments_sort_order'] = array(
+    '#title' => t('Sort order'),
+    '#type' => 'select',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="likebtn_comments_sort_enabled"]' => array('checked' => TRUE),
+      ),
+    ),
+    '#options' => array(
+      LikebtnInterface::LIKEBTN_COMMENTS_SORT_ORDER_DESC => t('Descending'),
+      LikebtnInterface::LIKEBTN_COMMENTS_SORT_ORDER_ASC => t('Ascending')),
+    '#default_value' => $config->get('likebtn_comments_sort_order_' . $node_type, LikebtnInterface::LIKEBTN_COMMENTS_SORT_ORDER_DESC),
+  );
+}*/
+
+// Fields config
+function likebtn_default_values_from_config($config)
+{
+  $default_values = array();
+  
+  foreach ($config as $key => $value) {
+    //echo 'key'.$key.' | ';
+    if (!preg_match("/^likebtn_/", $key)) {
+      continue;
+    }
+    if (is_array($value)) {
+      foreach ($value as $sub_key => $sub_value) {
+        $default_values[$sub_key] = $sub_value;
+      }
+    } else {
+      $default_values[$key] = $value;
+    }
+  }
+
+  return $default_values;
+}
+
+function likebtn_parse_field_identifier($identifier)
+{
+  $identifier = preg_replace("/^likebtn_/", '', $identifier);
+
+  preg_match('/^(.*)_(\d+)_field_(.*?)(?:_index_(\d+))?$/', $identifier, $identifier_parts);
+
+  $entity_type = '';
+  if (!empty($identifier_parts[1])) {
+    $entity_type = $identifier_parts[1];
+  }
+
+  $entity_id = '';
+  if (!empty($identifier_parts[2])) {
+    $entity_id = $identifier_parts[2];
+  }
+
+  $field_id = '';
+  if (!empty($identifier_parts[3])) {
+    $field_id = $identifier_parts[3];
+  }
+
+  $field_index = '';
+  if (!empty($identifier_parts[4])) {
+    $field_index = $identifier_parts[4];
+  }
+
+  return array($entity_type, $entity_id, $field_id, $field_index);
+}
+
+function likebtn_get_count($entity)
+{
+  $controller = new \Drupal\likebtn\Controller\LikeBtnController();
+  return $controller->likebtn_get_count($entity);
+}
+
+/**
+ * IN PROGRESS
+ */
+
+/**
+ * Get module public URL.
+ */
+function _likebtn_public_url() {
+  return _likebtn_subdirectory() . drupal_get_path('module', 'likebtn');
+}
+
+/**
+ * Get subdirectory.
+ */
+function _likebtn_subdirectory() {
+  global $base_url;
+  return parse_url($base_url, PHP_URL_PATH) . '/';
+}
+
+/**
+ * Implements hook_votingapi_views_formatters().
+ */
+function likebtn_votingapi_views_formatters($details = array()) {
+  if ($details->field == 'value') {
+    return array(
+      'likebtn_views_widget_display_only' => $this->t('LikeBtn widget (display only)'),
+      'likebtn_views_widget_full'         => $this->t('LikeBtn widget'),
+    );
+  }
+}
+
+/**
+ * Get views widget markup.
+ */
+function likebtn_views_widget_display_only($value, $field, $columns) {
+  return _likebtn_get_views_widget_markup($value, $field, $columns, LikebtnInterface::LIKEBTN_VIEWS_WIDGET_DISPLAY_ONLY);
+}
+
+/**
+ * Get views widget markup.
+ */
+function likebtn_views_widget_full($value, $field, $columns) {
+  return _likebtn_get_views_widget_markup($value, $field, $columns, LikebtnInterface::LIKEBTN_VIEWS_WIDGET_FULL);
+}
+
+/**
+ * Get LikeBtn for view.
+ */
+function _likebtn_get_views_widget_markup($value, $field, $columns, $mode = LikebtnInterface::LIKEBTN_VIEWS_WIDGET_FULL) {
+
+  $markup_render = new \Drupal\likebtn\LikeBtnMarkup();
+
+  $entity_name = $field->view->base_table;
+  $base_field  = $field->view->base_field;
+  $entity_id   = $columns->$base_field;
+
+  $values = NULL;
+  if ($mode == LikebtnInterface::LIKEBTN_VIEWS_WIDGET_DISPLAY_ONLY) {
+    $values['display_only'] = TRUE;
+  }
+
+  return $markup_render->likebtn_get_markup($entity_name, $entity_id, $values);
+}
+
+/**
+ * Implements hook_votingapi_metadata_alter().
+ */
+function likebtn_votingapi_metadata_alter(&$data) {
+  // Voting API tag name.
+  $data['tags'][LikebtnInterface::LIKEBTN_VOTING_TAG] = array(
+    'name' => LikebtnInterface::LIKEBTN_VOTING_TAG,
+    'description' => 'LikeBtn',
+    'module' => 'likebtn',
+  );
+}

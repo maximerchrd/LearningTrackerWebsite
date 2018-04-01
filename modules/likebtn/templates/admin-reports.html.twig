@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    var likebtn_reports_id = "{{ site_id }}";
+    var likebtn_couch_db_view_main = "_design/doctrine_repositories/_view/equal_constraint";
+    var likebtn_couch_db_type = "Likebtn.WidgetBundle.CouchDocument.Sitestats";
+    var likebtn_couch_db_url = "https://storage.likebtn.com/widget";
+    var likebtn_report_store_days = 14;
+    var likebtn_msg_votes = "{{ "Total Votes"|t }}";
+    var likebtn_msg_likes = "{{ "Likes"|t }}";
+    var likebtn_msg_dislikes = "{{ "Dislikes"|t }}";
+    var global_highcharts_lang = {
+        rangeSelectorZoom: "",
+        rangeSelectorFrom: "",
+        rangeSelectorTo: "/",
+        loading: "{{ "Loading..."|t }}",
+        downloadJPEG: "{{ "Download JPEG image"|t }}",
+        downloadPDF: "{{ "Download PDF document"|t }}",
+        downloadPNG: "{{ "Download PNG image"|t }}",
+        downloadSVG: "{{ "Download SVG vector image"|t }}",
+        printChart: "{{ "Print chart"|t }}",
+        months: ["{{ "January"|t }}", "{{ "February"|t }}", "{{ "March"|t }}", "{{ "April"|t }}", "{{ "May"|t }}", "{{ "June"|t }}", "{{ "July"|t }}", "{{ "August"|t }}", "{{ "September"|t }}", "{{ "October"|t }}", "{{ "November"|t }}", "{{ "December"|t }}"],
+        numericSymbols: null,
+        shortMonths: ["{{ "Jan"|t }}", "{{ "Feb"|t }}", "{{ "Mar"|t }}", "{{ "Apr"|t }}", "{{ "May"|t }}", "{{ "Jun"|t }}", "{{ "Jul"|t }}", "{{ "Aug"|t }}", "{{ "Sep"|t }}", "{{ "Oct"|t }}", "{{ "Nov"|t }}", "{{ "Dec"|t }}"],
+        weekdays: ["{{ "Sunday"|t }}", "{{ "Monday"|t }}", "{{ "Tuesday"|t }}", "{{ "Wednesday"|t }}", "{{ "Thursday"|t }}", "{{ "Friday"|t }}", "{{ "Saturday"|t }}"],
+        noData: "{{ "No votes found"|t }}"
+    }
+</script>
+
+<div id="likebtn_reports">
+    {% if not site_id %}
+        <div class="error">
+            <br/>{{ 'Please enter your account data on <a href="@link">Settings</a> tab in order to enable reports.'|t({'@link': settings_url}) }}
+            <br/><br/>
+        </div>
+    {% else %}
+        <div class="reports-error error"><br/>{{ "Error occured"|t }}. &nbsp;<button class="button-secondary" onclick="loadReports()">{{ "Retry"|t }}</button><br/><br/></div>
+            <h3 class="reports-vals">
+                <div class="report-val">{{ "Total Votes"|t }} <span class="reports-label reports-total"><img src="{{ loader_src }}" /></span></div>
+                <div class="report-val">{{ "Likes"|t }} <span class="reports-label reports-like"><img src="{{ loader_src }}" /></span></div>
+                <div class="report-val">{{ "Dislikes"|t }} <span class="reports-label reports-dislike"><img src="{{ loader_src }}" /></span></div>
+            </h3>
+            <h4>{{ "Last Two Weeks"|t }}</h4>
+            <div class="postbox likebtn-graph"><div class="reports-graph-d"></div></div>
+
+            <h4>{{ "Last Year"|t }}</h4>
+            <div class="postbox likebtn-graph"><div class="reports-graph-m"></div></div>
+        </div>
+    {% endif %}
+</div>
